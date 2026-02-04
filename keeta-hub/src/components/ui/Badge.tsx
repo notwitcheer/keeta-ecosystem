@@ -16,6 +16,8 @@ const badgeVariants = cva(
         live: 'border-transparent bg-success text-white animate-pulse',
         trending: 'border-transparent bg-primary-light text-primary-dark',
         featured: 'border-transparent bg-gradient-to-r from-primary to-primary-light text-white',
+        danger: 'border-transparent bg-danger text-white hover:bg-danger/80',
+        warning: 'border-transparent bg-orange-500 text-white hover:bg-orange-600',
       },
     },
     defaultVariants: {

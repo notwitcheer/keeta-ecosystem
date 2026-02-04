@@ -77,7 +77,7 @@ export function Footer() {
               {footerLinks.explore.map((link) => (
                 <li key={link.name}>
                   <Link
-                    href={link.href}
+                    href={link.href as any}
                     className="text-text-secondary hover:text-text-primary transition-colors text-sm"
                   >
                     {link.name}
@@ -95,14 +95,23 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.contribute.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-text-secondary hover:text-text-primary transition-colors text-sm"
-                    target={link.href.startsWith('http') ? '_blank' : undefined}
-                    rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  >
-                    {link.name}
-                  </Link>
+                  {link.href.startsWith('http') ? (
+                    <a
+                      href={link.href}
+                      className="text-text-secondary hover:text-text-primary transition-colors text-sm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href as any}
+                      className="text-text-secondary hover:text-text-primary transition-colors text-sm"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -116,14 +125,14 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.keeta.map((link) => (
                 <li key={link.name}>
-                  <Link
+                  <a
                     href={link.href}
                     className="text-text-secondary hover:text-text-primary transition-colors text-sm"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -137,7 +146,7 @@ export function Footer() {
               {footerLinks.legal.map((link) => (
                 <Link
                   key={link.name}
-                  href={link.href}
+                  href={link.href as any}
                   className="text-text-secondary hover:text-text-primary transition-colors text-xs"
                 >
                   {link.name}

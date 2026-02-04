@@ -46,9 +46,10 @@ export async function getKTATokenData(): Promise<TokenData | null> {
       ? 'https://pro-api.coingecko.com/api/v3'
       : 'https://api.coingecko.com/api/v3'
 
-    const headers = apiKey
-      ? { 'X-Cg-Pro-Api-Key': apiKey }
-      : {}
+    const headers: Record<string, string> = {}
+    if (apiKey) {
+      headers['X-Cg-Pro-Api-Key'] = apiKey
+    }
 
     // Note: Replace 'keeta' with actual CoinGecko token ID once available
     const response = await fetch(
@@ -103,9 +104,10 @@ export async function getKTAPriceHistory(days: number = 30): Promise<Array<{ tim
       ? 'https://pro-api.coingecko.com/api/v3'
       : 'https://api.coingecko.com/api/v3'
 
-    const headers = apiKey
-      ? { 'X-Cg-Pro-Api-Key': apiKey }
-      : {}
+    const headers: Record<string, string> = {}
+    if (apiKey) {
+      headers['X-Cg-Pro-Api-Key'] = apiKey
+    }
 
     // Note: Replace 'keeta' with actual CoinGecko token ID once available
     const response = await fetch(

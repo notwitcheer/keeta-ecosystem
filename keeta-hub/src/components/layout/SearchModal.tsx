@@ -132,7 +132,6 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
         {/* Search Input */}
         <div className="p-4 border-b border-border">
           <SearchBar
-            ref={searchInputRef}
             placeholder="Search projects, news, categories..."
             value={query}
             onChange={setQuery}

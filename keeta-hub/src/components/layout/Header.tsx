@@ -34,7 +34,7 @@ export function Header() {
             {navigation.map((item) => (
               <Link
                 key={item.name}
-                href={item.href}
+                href={item.href as any}
                 className="text-text-secondary hover:text-text-primary transition-colors font-medium"
               >
                 {item.name}
@@ -80,7 +80,7 @@ export function Header() {
             {navigation.map((item) => (
               <Link
                 key={item.name}
-                href={item.href}
+                href={item.href as any}
                 className="block px-2 py-2 text-text-secondary hover:text-text-primary transition-colors font-medium rounded-lg hover:bg-background-card-hover"
                 onClick={() => setIsMenuOpen(false)}
               >

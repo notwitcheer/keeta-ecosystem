@@ -39,10 +39,11 @@ export const metadata: Metadata = {
     description: 'Discover projects, stay updated with news, and find the tools you need in the Keeta Network ecosystem.',
     creator: '@KeetaNetwork',
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
   themeColor: '#00B4D8',
 }
 
